@@ -1,103 +1,101 @@
-import Image from "next/image";
+// import Link from 'next/link';
+"use client"
+import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 
-export default function Home() {
+export default function TLCChatMate() {
+  const [isDecision, setIsDecision] = useState(false)
+  const modalRef = useRef(null)
+
+  useEffect(() => {
+    function whenUserClickOutside(e) {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setIsDecision(false)
+      }
+    }
+    if (isDecision) { document.addEventListener("mousedown", whenUserClickOutside) }
+    return () => document.removeEventListener("mousedown", whenUserClickOutside)
+  }, [isDecision])
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="bg-[#f2f2f2] h-screen flex items-center justify-center font-sans relative">
+      <div className="max-w-4xl w-full px-6 flex flex-col md:flex-row items-center justify-between z-10">
+        <div className="w-64 md:w-80 lg:w-96 order-first md:order-last">
+          <div className="rounded-full p-4 flex items-center justify-center">
+            <img className="object-contain w-full h-full" src="logo/logo.png" alt="TLC Chatmate logo" />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        <div className="text-center md:text-left mb-8 md:mb-0 order-last md:order-first mt-6 md:mt-0">
+          <h1 className="text-blue-500 font-bold">
+            <span className="text-4xl block mb-2 text-[#205781]">Welcome to</span>
+            <span className="text-4xl font-bold block text-[#205781]">TLC ChatMate</span>
+          </h1>
+          <p className="mt-4 text-gray-600 text-lg mb-2">A Conversational Agent for The Lewis College</p>
+
+          <button className="mt-8 bg-[#0678CF] hover:bg-blue-900 text-white font-medium py-2 px-8 rounded-full transition duration-400" onClick={() => setIsDecision(true)}>
+            Get Started
+          </button>
+        </div>
+      </div>
+
+      {/*
+      <div className="absolute bottom-24 left-1/4">
+        <div className="w-6 h-6 bg-[#205781] rounded-full opacity-70"></div>
+      </div>
+      <div className="absolute bottom-40 left-1/3">
+        <div className="w-4 h-4 bg-[#205781] rounded-full opacity-70"></div>
+      </div>
+      <div className="absolute bottom-32 left-1/5">
+        <div className="w-3 h-3 bg-[#205781] rounded-full opacity-70"></div>
+      </div>
+      <div className="absolute bottom-57 left-1/2">
+        <div className="w-3 h-3 bg-[#205781] rounded-full opacity-70"></div>
+      </div>
+
+
+      <div className="absolute top-20 right-1/3">
+        <div className='w-3 h-3 bg-[#205781] rounded-full opacity-70'></div>
+      </div>
+      <div className="absolute top-33 right-1/2">
+        <div className='w-3 h-3 bg-[#205781] rounded-full opacity-70'></div>
+      </div>
+      */}
+
+      {isDecision && (
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-10" />
+      )}
+
+      <div ref={modalRef} className={`fixed p-4 top-0 right-0 h-full w-full sm:w-full md:w-1/4 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-45 ${isDecision ? "translate-x-0" : "translate-x-full"}`}>
+        <div className="">
+          <button className="text-gray-600 hover:text-gray-800 transition duration-200" onClick={() => setIsDecision(false)}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/*link*/}
+        <div className=" flex h-full items-center justify-center">
+          <div className="p-4 flex flex-col justify-between items-center">
+          <img className="w-32 sm:w-40 md:w-48 lg:w-56 mx-auto" src="logo/logo.png" alt="TLC ChatMate Logo" />
+            <h2 className="text-xl font-semibold text-gray-600 text-center mb-4">How would you like to continue?</h2>
+
+            <div className="flex flex-col mt-8 items-center w-full">
+              <div className="w-full flex flex-col items-center">
+                <Link className="block w-full bg-[#3141D0] hover:bg-blue-900 rounded-full text-center font-bold text-white transition duration-200 shadow-md py-2 mb-3" href="/login">Login</Link>
+                <Link className="block w-full bg-green-500 hover:bg-green-700 rounded-full text-center font-bold text-white transition duration-200 shadow-md py-2" href="">Sign Up</Link>
+                <Link className="border-b text-gray-600 mt-10" href="">Continue as a guest</Link>
+              </div>
+            </div>
+            {/*
+            <footer className="text-center text-xs text-gray-600 mt-8">
+              © 2025 TLC Chatmate
+            </footer>
+            */}
+          </div>
+        </div>
+      </div>
+    </main>
+  )
 }
