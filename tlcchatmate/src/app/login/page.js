@@ -38,7 +38,7 @@ export default function Login() {
 
     return (
         <main className="flex justify-center items-center min-h-screen px-4 bg-gray-50 py-6">
-            <div className="flex flex-col sm:flex-row w-full max-w-5xl rounded-2xl overflow-hidden shadow-xl">
+            <div className="flex flex-col sm:flex-row w-full max-w-5xl rounded-2xl overflow-hidden shadow-xl h-[60vh]">
 
                 {/*bg-gradient-to-br from-blue-500 to-blue-700*/}
 
@@ -98,33 +98,12 @@ export default function Login() {
                         </div>
                     </div>
 
-                    <div className="flex jsutify-between items-center mb-6">
-                        < label className="mr-auto flex items-center space-x-2">
-                            <input className="rounded border-gray-300 text-blue-600 focus:ring-blue-500" type="checkbox" id="remember" />
-                            <span className="text-sm text-gray-600" htmlFor="remember">Remember me</span>
-                        </label>
-
+                    <div className="flex justify-end items-center mb-6">
                         <Link className="text-sm text-[#205781] hover:text-blue-900 hover:underline" href="">Forgot password?</Link>
                     </div>
 
 
                     <button className="block w-full text-white font-bold rounded-full shadow-md bg-[#3141D0] hover:bg-blue-900 transition duration-400 text-center py-3 mb-6" onClick={success_or_invalid}>Login</button>
-
-                    <div className="flex items-center my-6">
-                        <hr className="flex-grow border-gray-300" />
-                        <span className="px-4 text-gray-600 text-sm">OR CONTINUE WITH</span>
-                        <hr className="flex-grow border-gray-300" />
-                    </div>
-
-                    <Link className="flex items-center justify-center w-full border border-gray-300 rounded-full shadow-sm gap-2w bg-white py-3 hover:bg-gray-100 transition duration-200" href="">
-                        <Image className="mr-2" src="/logo/google-logo.png" alt="Google logo" width={20} height={20} />
-                        <span className="text-gray-600">Google</span>
-                    </Link>
-
-                    <div className="text-center mt-8 text-gray-600 text-sm">
-                        <span className="text-gray-600">New to TLC ChatMate? {" "}</span>
-                        <Link className="text-green-500 font-bold hover:underline hover:text-green-700" href="/register">Sign Up</Link>
-                    </div>
                 </div>
             </div>
         </main>
