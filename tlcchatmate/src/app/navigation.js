@@ -28,12 +28,12 @@ export default function Navigation() {
                                     <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                                 </svg>
                             </button>
-                            <a href="https://flowbite.com" className="flex ms-2 md:me-24">
+                            <div className="flex ms-2 md:me-24">
                                 <img src="/logo/logo.png" className="h-8 sm:h-10 me-3" alt="TLC ChatMate Logo" />
-                                <span className="self-center text-xl font-bold sm:text-4xl whitespace-nowrap text-[#205781]">
+                                <span className="self-center text-lg font-bold sm:text-2xl whitespace-nowrap text-[#205781]">
                                     TLC ChatMate
                                 </span>
-                            </a>
+                            </div>
                         </div>
 
                         <div className="flex items-center">

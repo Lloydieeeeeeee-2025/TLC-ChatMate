@@ -16,7 +16,7 @@ export default function Scholarships() {
                         </div>
                     </div>
 
-                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <div className="relative overflow-x-auto border border-gray-200 sm:rounded-lg">
                         {/*"flex flex-col-reverse items-start md:flex-row md:items-center justify-between gap-2 mb-5"*/}
                         <div className="my-2 ml-2">
                             {/*

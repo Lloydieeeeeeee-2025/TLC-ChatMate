@@ -104,7 +104,7 @@ export default function Newscholarship() {
                         </div>
                     </div>
 
-                    <div className="flex justify-center bg-white shadow-lg rounded-lg p-5">
+                    <div className="flex justify-center bg-white border border-gray-200 rounded-lg p-5">
                         <div className="w-full md:w-[80%] lg:w-1/2">
                             <div className="">
                                 <h3 className="font-semibold">Scholarship Title</h3>
@@ -158,7 +158,7 @@ export default function Newscholarship() {
                                 </div>
 
                                 {/*modal begining*/}
-                                <div className={`fixed inset-0 bg-opacity-20 backdrop-blur-sm transition-opacity duration-300 ${activateModal ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => isActivateModal(false)}></div>
+                                <div className={`fixed inset-0 bg-opacity-20 bg-black/30 backdrop-blur-xs transition-opacity duration-300 ${activateModal ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => isActivateModal(false)}></div>
 
                                 <div className={`fixed top-0 right-0 h-full w-full z-100 md:w-[30%] md:z-40 bg-white border-l border-gray-200 transform transition-transform duration-300 ${activateModal ? "translate-x-0" : "translate-x-full"}`}>
                                     <div className="flex flex-col h-full p-5 space-y-4">

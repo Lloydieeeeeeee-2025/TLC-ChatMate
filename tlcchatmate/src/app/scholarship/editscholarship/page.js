@@ -31,7 +31,7 @@ export default function EditScholarship() {
                         </div>
                     </div>
 
-                    <div className="flex justify-center bg-white shadow-lg rounded-lg p-5">
+                    <div className="flex justify-center bg-white border border-gray-200 rounded-lg p-5">
                         <div className="w-full md:w-[80%] lg:w-1/2">
                             <div className="">
                                 <h3 className="font-semibold">Scholarship Title</h3>
@@ -71,7 +71,7 @@ export default function EditScholarship() {
                                 </div>
 
                                 {/*modal begining*/}
-                                <div className={`fixed inset-0 bg-opacity-20 backdrop-blur-sm transition-opacity duration-300 ${activateModal ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => isActivateModal(false)}></div>
+                                <div className={`fixed inset-0 bg-opacity-20 bg-black/30 backdrop-blur-xs transition-opacity duration-300 ${activateModal ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => isActivateModal(false)}></div>
 
                                 <div className={`fixed top-0 right-0 h-full w-full z-100 md:w-[30%] md:z-40 bg-white border-l border-gray-200 transform transition-transform duration-300 ${activateModal ? "translate-x-0" : "translate-x-full"}`}>
                                     <div className="flex flex-col h-full p-5 space-y-4">
@@ -170,9 +170,9 @@ export default function EditScholarship() {
             </div>
 
             {confirmationModal && (
-                <div className="fixed z-70 inset-0 z-50 flex items-center justify-center w-full h-full bg-opacity-50 backdrop-blur-sm overflow-y-auto">
+                <div className="fixed z-70 inset-0 z-50 flex items-center justify-center w-full h-full bg-opacity-50 bg-black/30 backdrop-blur-xs overflow-y-auto">
                     <div className="relative p-4 w-full max-w-md h-full sm:h-auto">
-                        <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                        <div className="relative bg-white rounded-lg dark:bg-gray-700">
                             <button onClick={() => setConfirmationModal(false)} type="button" className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
                                 <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7L1 13" />

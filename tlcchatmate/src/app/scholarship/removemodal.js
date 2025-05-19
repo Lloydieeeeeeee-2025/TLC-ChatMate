@@ -14,7 +14,7 @@ export default function RemoveModal() {
             </div>
 
             {successModal && (
-                <div className="fixed z-70 inset-0 z-50 flex items-center justify-center w-full h-full bg-opacity-50 backdrop-blur-sm overflow-y-auto" onClick={() => setSuccessModal(false)}> {/* close when clicked outside of the modal*/}
+                <div className="fixed z-70 inset-0 z-50 flex items-center justify-center w-full h-full bg-opacity-50 bg-black/30 backdrop-blur-xs overflow-y-auto" onClick={() => setSuccessModal(false)}> {/* close when clicked outside of the modal*/}
                     <div className="relative p-4 w-full max-w-md h-full sm:h-auto" onClick={(e) => e.stopPropagation()}> {/* close when clicked outside of the modal*/}
                         <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
                             <button onClick={() => setSuccessModal(false)} type="button" className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
