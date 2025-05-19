@@ -58,7 +58,7 @@ export default function Login() {
 
                 {/*right*/}
                 <div className="flex w-full flex-col justify-center p-8 lg:p-12 bg-[#f2f2f2] rounded shadow">
-                    <p className="font-bold text-gray-600 mb-2 text-center">Acess your account</p>
+                    <p className="font-bold text-gray-600 mb-2 text-center">Access your account</p>
 
 
                     <div className="mb-6">

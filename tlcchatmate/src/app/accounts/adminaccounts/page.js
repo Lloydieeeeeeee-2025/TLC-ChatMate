@@ -4,24 +4,38 @@ import Navigation from "@/app/navigation"
 import Dropdown from "../dropdown"
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
+import RemoveModal from "../removemodal"
+// import Link from "next/link"
+import AddModal from "../addmodal"
+import EditModal from "../editmodal"
 
 export default function AdmissionAccounts() {
-    const [activateModal, isActivateModal] = useState(false)
+    const [accountsSettingsModal, accountSettingsModal] = useState(false)
+    const [addModal, setAddModal] = useState(false)
+    const [editModal, setEditModal] = useState(false)
 
+    /*
     const openAttrReqrModal = () => {
-        isActivateModal(true)
+        setAddModal(true)
     }
+    */
 
-    const [adminName, setAdminName] = useState("John Doe")
-    const [adminEmail, setAdminEmail] = useState("johndoe@gmail.com")
-    const [adminCurrentPassword, setAdminCurrentPassword] = useState("***")
-    const [adminNewPassword, setAdminNewPassword] = useState("****")
+    /*
+    const openEditModal = () => {
+        setEditModal(true)
+    }
+    */
+
+    // const [adminName, setAdminName] = useState("John Doe")
+    // const [adminEmail, setAdminEmail] = useState("johndoe@gmail.com")
+    // const [adminCurrentPassword, setAdminCurrentPassword] = useState("***")
+    // const [adminNewPassword, setAdminNewPassword] = useState("****")
 
     const searchParams = useSearchParams()
 
     useEffect(() => {
         const showModal = searchParams.get("showModal") === "true";
-        isActivateModal(showModal);
+        accountSettingsModal(showModal);
     }, [searchParams])
 
     return (
@@ -33,6 +47,7 @@ export default function AdmissionAccounts() {
                         <h1 className="font-bold text-lg sm:text-2xl text-gray-600">Administrators</h1>
                         <div className="flex justify-center md:justify-end">
                             <Dropdown />
+                            <button className="font-semibold sm:text-base hover:bg-gray-100 py-2 px-3" onClick={() => setAddModal(true)}>Create Account</button>
                         </div>
                     </div>
 
@@ -52,105 +67,62 @@ export default function AdmissionAccounts() {
                                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                         </svg>
                                     </div>
-                                    <input type="text" id="table-search" className="block max-w-[10rem] sm:max-w-[20rem] md:max-w-[24rem] h-10 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" />
+                                    <input type="text" id="table-search" className="block max-w-[10rem] sm:max-w-[20rem] bg-gray-50 md:max-w-[24rem] h-10 ps-10 text-sm border rounded-lg border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent" placeholder="Search" />
                                 </div>
                             </div>
                         </div>
+
 
                         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead className="text-xs text-gray-700 uppercase bg-[#205781] text-white dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
-                                    <th scope="col" className="px-6 py-3">adm_id</th>
-                                    <th scope="col" className="px-6 py-3">adm_name</th>
-                                    <th scope="col" className="px-6 py-3">adm_email</th>
-                                    <th scope="col" className="px-6 py-3"></th>
-                                    <th scope="col" className="px-6 py-3"></th>
+                                    <th scope="col" className="px-6 py-3 w-1/12"></th>
+                                    <th scope="col" className="px-6 py-3 w-1/12"></th>
+                                    <th scope="col" className="px-6 py-3 w-1/3">adm_id</th>
+                                    <th scope="col" className="px-6 py-3 w-1/3">adm_name</th>
+                                    <th scope="col" className="px-6 py-3 w-1/3">adm_email</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">adm-0059</th>
-                                    <td className="px-6 py-4 w-1/4">Victor Latosa</td>
-                                    <td className="px-6 py-4 w-1/2">victorlatosa@thelewiscollege.edu.ph</td>
-                                    <td className="px-6 py-4">Remove</td>
                                     <td className="px-6 py-4">
-                                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={openAttrReqrModal}>Edit</button>
+                                        <RemoveModal className="font-medium dark:text-red-500 hover:underline" />
                                     </td>
+                                    <td className="px-6 py-4">
+                                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => setEditModal(true)}>Edit</button>
+                                    </td>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white w-1/3">adm-0059</th>
+                                    <td className="px-6 py-4 w-1/3">Victor Latosa</td>
+                                    <td className="px-6 py-4 w-1/3">victorlatosa@thelewiscollege.edu.ph</td>
                                 </tr>
                                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">adm-0060</th>
-                                    <td className="px-6 py-4 w-1/4">Shaina Miras</td>
-                                    <td className="px-6 py-4 w-1/2">shainamiras@thelewiscollege.edu.ph</td>
-                                    <td className="px-6 py-4">Remove</td>
                                     <td className="px-6 py-4">
-                                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={openAttrReqrModal}>Edit</button>
+                                        <RemoveModal className="font-medium dark:text-red-500 hover:underline" />
                                     </td>
+                                    <td className="px-6 py-4">
+                                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => setEditModal(true)}>Edit</button>
+                                    </td>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white w-1/3">adm-0060</th>
+                                    <td className="px-6 py-4 w-1/3">Shaina Miras</td>
+                                    <td className="px-6 py-4 w-1/3">shainamiras@thelewiscollege.edu.ph</td>
                                 </tr>
                                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">adm-0061</th>
-                                    <td className="px-6 py-4 w-1/4">Lloyd De Leon</td>
-                                    <td className="px-6 py-4 w-1/2">lloyddeleon@thelewiscollege.edu.ph</td>
-                                    <td className="px-6 py-4">Remove</td>
                                     <td className="px-6 py-4">
-                                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={openAttrReqrModal}>Edit</button>
+                                        <RemoveModal className="font-medium dark:text-red-500 hover:underline" />
                                     </td>
+                                    <td className="px-6 py-4">
+                                        <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => setEditModal(true)}>Edit</button>
+                                    </td>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white w-1/3">adm-0061</th>
+                                    <td className="px-6 py-4 w-1/3">Lloyd De Leon</td>
+                                    <td className="px-6 py-4 w-1/3">lloyddeleon@thelewiscollege.edu.ph</td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <div className={`fixed inset-0 bg-opacity-20 backdrop-blur-sm transition-opacity duration-300 ${activateModal ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => isActivateModal(false)}></div>
+                        <AddModal open={addModal} close={() => setAddModal(false)} />
+                        <EditModal open={editModal} close={() => setEditModal(false)} />
 
-                        <div className={`fixed top-0 right-0 h-full w-full z-100 md:w-[30%] md:z-40 bg-white border-l border-gray-200 transform transition-transform duration-300 ${activateModal ? "translate-x-0" : "translate-x-full"}`}>
-                            <div className="flex flex-col h-full p-5 space-y-4">
-
-                                <div className="">
-                                    <button onClick={() => isActivateModal(false)} className="text-gray-600 hover:text-black">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <div className="flex flex-col h-full ">
-                                    <div className="mb-4 w-full">
-                                        <h2 className="text-lg font-semibold  mb-2">Administrator</h2>
-                                    </div>
-
-                                    <div className="w-full flex-1 overflow-y-auto">
-                                        <div className="space-y-4 md:space-y-6">
-                                            <div className="space-y-2">
-                                                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                                                <input type="text" id="name" name="name" className="w-full border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent" value={adminName} onChange={(e) => setAdminName(e.target.value)} placeholder="Your full name" />
-                                            </div>
-
-                                            <div className="space-y-2">
-                                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                                                <input type="email" id="email" name="email" className="w-full border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent" value={adminEmail} onChange={(e) => setAdminEmail(e.target.value)} placeholder="your.email@example.com" />
-                                            </div>
-
-                                            <div className="pt-4 border-t border-gray-200">
-                                                <h3 className="text-lg font-medium text-gray-800 mb-3">Change Password</h3>
-
-                                                <div className="space-y-2">
-                                                    <label htmlFor="currentPassword" className="block text-sm font-medium text-gray-700">Current Password</label>
-                                                    <input type="password" id="currentPassword" name="currentPassword" className="w-full border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent" value={adminCurrentPassword} onChange={(e) => setAdminCurrentPassword(e.target.value)} placeholder="••••••••" />
-                                                </div>
-
-                                                <div className="space-y-2">
-                                                    <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700">New Password</label>
-                                                    <input type="password" id="newPassword" name="newPassword" className="w-full border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent" value={adminNewPassword} onChange={(e) => setAdminNewPassword(e.target.value)} placeholder="••••••••" />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button className="w-full bg-gray-200 hover:bg-gray-300 transition duration-400 p-2 rounded-lg" onClick={() => isActivateModal(false)}>
-                                    Okay
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

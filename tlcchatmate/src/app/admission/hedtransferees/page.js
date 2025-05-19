@@ -1,9 +1,10 @@
 "use client"
 import { useState } from "react"
 import Navigation from "../../navigation"
-import Link from "next/link"
+// import Link from "next/link"
 import Dropdown from "../dropdown"
 import SuccessModal from "../successmodal"
+import ArrowDownModal from "../arrowdownmodal"
 
 export default function HEDTransferees() {
     const [selectedItem, setSelectedItem] = useState(null)
@@ -11,6 +12,8 @@ export default function HEDTransferees() {
     const [requirementField, setRquirementField] = useState("")
     const [requirementList, setRequirementList] = useState([])
     const [requirementFieldError, setRquirementFieldError] = useState("")
+
+    const [showQueueModal, setShowQueueModal] = useState(false)
 
     const makeRequirement = () => {
         if (requirementField.length <= 1) {
@@ -20,6 +23,10 @@ export default function HEDTransferees() {
             setRquirementFieldError("")
             setRequirementList([...requirementList, requirementField.trim()])
             setRquirementField("")
+            setShowQueueModal(true)
+            setTimeout(() => {
+                setShowQueueModal(false)
+            }, 2000)
         }
     }
 
@@ -56,6 +63,7 @@ export default function HEDTransferees() {
         setSelectedItem(index)
     }
 
+
     return (
         <main className="text-gray-600 ">
             <Navigation />
@@ -79,17 +87,13 @@ export default function HEDTransferees() {
 
                                     <div className="mb-4 w-full">
                                         <div className="flex items-stretch">
-                                            <input
-                                                className="w-full border border-gray-200 rounded-l-md p-2.5 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent transition duration-200"
-                                                value={requirementField}
-                                                onChange={(e) => setRquirementField(e.target.value)}
-                                                placeholder="Enter a requirement"
-                                            />
+                                            <input className="w-full border border-gray-200 rounded-l-md p-2.5 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent transition duration-200" value={requirementField} onChange={(e) => setRquirementField(e.target.value)} placeholder="Enter a requirement"/>
                                             <button className="bg-gray-200 hover:bg-gray-300 rounded-r-md p-2 transition duration-200" onClick={makeRequirement}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-5">
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                 </svg>
                                             </button>
+                                            <ArrowDownModal open={showQueueModal} queue={makeRequirement}/>
                                         </div>
                                         {requirementFieldError && <span className="text-sm mt-1 block text-red-600">{requirementFieldError}</span>}
                                     </div>

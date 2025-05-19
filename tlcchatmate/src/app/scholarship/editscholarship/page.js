@@ -3,6 +3,7 @@
 import Navigation from "@/app/navigation"
 import Link from "next/link"
 import { useState } from "react"
+//import AddModal from "@/app/accounts/addModal.js/page"
 
 export default function EditScholarship() {
     const [activateModal, isActivateModal] = useState(false)
@@ -26,7 +27,7 @@ export default function EditScholarship() {
 
                         <div className="flex justify-center md:justify-end">
                             <Link className="font-semibold sm:text-base border-transparent hover:bg-gray-100 py-2 px-3" href="/scholarship/scholarships">Management</Link>
-                            <Link className="font-semibold sm:text-base hover:bg-gray-100 py-2 px-3" href="/scholarship/createscholarship">Create Scholarship</Link>
+                            <button className="font-semibold sm:text-base hover:bg-gray-100 py-2 px-3" >Create Scholarship</button>
                         </div>
                     </div>
 

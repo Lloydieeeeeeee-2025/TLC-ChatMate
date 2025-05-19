@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navigation from "../../navigation";
+import RemoveModal from "../removemodal";
 
 export default function Scholarships() {
     return (
@@ -39,58 +40,74 @@ export default function Scholarships() {
                         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead className="text-xs text-gray-700 uppercase bg-[#205781] text-white dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
+                                    <th scope="col" className="px-6 py-3"></th>
+                                    <th scope="col" className="px-6 py-3"></th>
                                     <th scope="col" className="px-6 py-3">sch_id</th>
                                     <th scope="col" className="px-6 py-3">sch_name</th>
                                     <th scope="col" className="px-6 py-3">sch_description</th>
-                                    <th scope="col" className="px-6 py-3"></th>
-                                    <th scope="col" className="px-6 py-3"></th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td className="px-6 py-4">
+                                        <RemoveModal className="font-medium dark:text-red-500 hover:underline" />
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <Link href="/scholarship/editscholarship" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
+                                    </td>
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">sch_a001</th>
                                     <td className="px-6 py-4 w-1/4">Validictorian and Salutatorian Scholarship</td>
                                     <td className="px-6 py-4 w-1/2">This scholarship program is open to all incoming freshmen students who graduated valedictorian and salutatorian from different private and public secondary schools.</td>
-                                    <td className="px-6 py-4">Remove</td>
+
+                                </tr>
+                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td className="px-6 py-4">
+                                        <RemoveModal className="font-medium dark:text-red-500 hover:underline" />
+                                    </td>
                                     <td className="px-6 py-4">
                                         <Link href="/scholarship/editscholarship" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                                     </td>
-                                </tr>
-                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">sch_a002</th>
                                     <td className="px-6 py-4 w-1/4">Academic Scholarship</td>
                                     <td className="px-6 py-4 w-1/2">This scholarship is considered as the school’s premier scholarship for highly qualified applicants whose qualifications are based on their scholastic achievements.</td>
-                                    <td className="px-6 py-4">Remove</td>
+
+                                </tr>
+                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td className="px-6 py-4">
+                                        <RemoveModal className="font-medium dark:text-red-500 hover:underline" />
+                                    </td>
                                     <td className="px-6 py-4">
                                         <Link href="/scholarship/editscholarship" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                                     </td>
-                                </tr>
-                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">sch_a003</th>
                                     <td className="px-6 py-4 w-1/4">Student Assistant Scholarship</td>
                                     <td className="px-6 py-4 w-1/4">The student assistant scholarship is open to less-privileged students who would like to enroll in the Higher Education Department (HED).</td>
-                                    <td className="px-6 py-4">Remove</td>
+
+                                </tr>
+                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td className="px-6 py-4">
+                                        <RemoveModal className="font-medium dark:text-red-500 hover:underline" />
+                                    </td>
                                     <td className="px-6 py-4">
                                         <Link href="/scholarship/editscholarship" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                                     </td>
-                                </tr>
-                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">sch_a004</th>
                                     <td className="px-6 py-4 w-1/4">Varsity Scholarship</td>
                                     <td className="px-6 py-4 w-1/4">Varsity Scholarship is open to all college students who are determined to continue their education through their skills and talents in the field of sports.</td>
-                                    <td className="px-6 py-4">Remove</td>
+
+                                </tr>
+                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    <td className="px-6 py-4">
+                                        <RemoveModal className="font-medium dark:text-red-500 hover:underline" />
+                                    </td>
                                     <td className="px-6 py-4">
                                         <Link href="/scholarship/editscholarship" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                                     </td>
-                                </tr>
-                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">sch_a005</th>
                                     <td className="px-6 py-4 w-1/4">Arts and Culture Scholarship</td>
                                     <td className="px-6 py-4 w-1/4">This scholarship is open to all students who have commendable talents in the area of singing, dancing, and acting. </td>
-                                    <td className="px-6 py-4">Remove</td>
-                                    <td className="px-6 py-4">
-                                        <Link href="/scholarship/editscholarship" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
-                                    </td>
+
                                 </tr>
                             </tbody>
                         </table>
