@@ -14,10 +14,10 @@ export default function Login() {
     const router = useRouter()
 
     const success_or_invalid = () => {
-        if (email === 'admin' && password  === '123') {
+        if (email === 'user' && password  === '123') {
             setIsInvalidEmail("")
             setIsInvalidPassword("")
-            router.push("/userpage/faqs")
+            router.push("/userpage/users/faqs")
         }
         else {
             setIsInvalidEmail("Email is invalid");

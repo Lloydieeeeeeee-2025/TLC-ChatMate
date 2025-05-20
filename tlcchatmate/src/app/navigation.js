@@ -47,7 +47,7 @@ export default function Navigation() {
 
                                 {dropdownOpen && (
                                     <div className="absolute top-full right-0 z-50 mt-2 w-48 text-base list-none bg-white divide-y divide-gray-100 rounded-sm border border-gray-200 dark:bg-gray-700 dark:divide-gray-600">
-                                        <div className="px-4 py-3" role="none">
+                                        <div className="" role="none">
                                             <p className="text-sm text-gray-600 dark:text-white" role="none">
                                                 John Doe
                                             </p>

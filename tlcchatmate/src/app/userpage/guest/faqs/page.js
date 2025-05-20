@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import FAQSNavigation from '../faqnavigation';
+import FAQSNavigation from '../../faqnavigation';
 
 export default function FAQS() {
     const [isAdmissionPolicices, setIsAdmissionPolicies] = useState(false)

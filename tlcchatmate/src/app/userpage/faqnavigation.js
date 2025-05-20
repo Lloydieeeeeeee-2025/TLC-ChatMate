@@ -18,7 +18,7 @@ export default function FAQSNavigation() {
             <nav className="relative flex items-center justify-between h-auto sm:h-10 md:justify-center bg-[#205781] py-6">
                 <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0 px-4 sm:px-6 md:px-8">
                     <div className="flex items-center justify-between w-full md:w-auto">
-                        <a className="inline-flex gap-1 sm:gap-2 items-center bg-white p-1.5 sm:p-2 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs sm:text-sm text-center hover:bg-gray-50 transition-colors" href="/userpage/faqs">
+                        <a className="inline-flex gap-1 sm:gap-2 items-center bg-white p-1.5 sm:p-2 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-xs sm:text-sm text-center hover:bg-gray-50 transition-colors" href="/userpage/guest/faqs">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4 sm:size-5">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                             </svg>

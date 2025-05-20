@@ -37,7 +37,7 @@ export default function AdmissionAccounts() {
             <div className="pt-11 pl-0 sm:pl-64">
                 <div className="p-5">
                     <div className="flex flex-col md:flex-row  sm:justify-between sm:items-center gap-2 mt-5 border-b border-gray-200">
-                        <h1 className="font-bold text-lg sm:text-2xl text-gray-600">Students</h1>
+                        <h1 className="font-bold text-lg sm:text-2xl text-gray-600">Users</h1>
                         <div className="flex justify-center md:justify-end">
                             <Dropdown />
                             <button className="font-semibold sm:text-base hover:bg-gray-100 py-2 px-3" onClick={() => setAddModal(true)}>Create Account</button>
@@ -70,9 +70,9 @@ export default function AdmissionAccounts() {
                                 <tr>
                                     <th scope="col" className="px-6 py-3"></th>
                                     <th scope="col" className="px-6 py-3"></th>
-                                    <th scope="col" className="px-6 py-3">stu_id</th>
-                                    <th scope="col" className="px-6 py-3">stu_name</th>
-                                    <th scope="col" className="px-6 py-3">stu_email</th>
+                                    <th scope="col" className="px-6 py-3">user_id</th>
+                                    <th scope="col" className="px-6 py-3">user_name</th>
+                                    <th scope="col" className="px-6 py-3">user_email</th>
                                     
                                 </tr>
                             </thead>
@@ -84,7 +84,7 @@ export default function AdmissionAccounts() {
                                     <td className="px-6 py-4">
                                         <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => setEditModal(true)}>Edit</button>
                                     </td>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">stu-0059</th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">user-0059</th>
                                     <td className="px-6 py-4 w-1/4">Jimmy Alapag</td>
                                     <td className="px-6 py-4 w-1/2">jimmyalapag@thelewiscollege.edu.ph</td>
 
@@ -96,7 +96,7 @@ export default function AdmissionAccounts() {
                                     <td className="px-6 py-4">
                                         <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => setEditModal(true)}>Edit</button>
                                     </td>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">stu-0060</th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">user-0060</th>
                                     <td className="px-6 py-4 w-1/4">Jason Catro</td>
                                     <td className="px-6 py-4 w-1/2">jasoncastro@thelewiscollege.edu.ph</td>
 
@@ -108,7 +108,7 @@ export default function AdmissionAccounts() {
                                     <td className="px-6 py-4">
                                         <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => setEditModal(true)}>Edit</button>
                                     </td>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">stu-0061</th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">user-0061</th>
                                     <td className="px-6 py-4 w-1/4">James Yap</td>
                                     <td className="px-6 py-4 w-1/2">jamesyap@thelewiscollege.edu.ph</td>
 

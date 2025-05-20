@@ -85,7 +85,7 @@ export default function TLCChatMate() {
               <div className="w-full flex flex-col items-center">
                 <Link className="block w-full bg-[#3141D0] hover:bg-blue-900 rounded-full text-center font-bold text-white transition duration-200 shadow-md py-2 mb-3" href="/userpage/userlogin">Login</Link>
                 <Link className="block w-full bg-green-500 hover:bg-green-700 rounded-full text-center font-bold text-white transition duration-200 shadow-md py-2" href="/userpage/userregister">Sign Up</Link>
-                <Link className="border-b text-gray-600 mt-10" href="">Continue as a guest</Link>
+                <Link className="border-b text-gray-600 mt-10" href="/userpage/guest/faqs">Continue as a guest</Link>
               </div>
             </div>
             {/*
